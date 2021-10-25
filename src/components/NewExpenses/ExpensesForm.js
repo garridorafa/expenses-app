@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ExpensesForm.css";
 
-const ExpensesFrom = (props) => {
+const ExpensesForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -23,7 +23,7 @@ const ExpensesFrom = (props) => {
     e.preventDefault();
     const enteredData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(enteredData);
@@ -72,4 +72,4 @@ const ExpensesFrom = (props) => {
   );
 };
 
-export default ExpensesFrom;
+export default ExpensesForm;
